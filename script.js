@@ -15,7 +15,7 @@
     header: '.l-header',
     logo: '.c-logo',
     logoImg: '.c-logo__img',
-    nav: '.c-nav#main-nav',
+    nav: '.c-nav#nav-menu',
     navToggle: '.c-nav__toggle',
     navList: '.c-nav__list',
     navLink: '.c-nav__link'
@@ -383,7 +383,7 @@
     }
 
     function validateName(name) {
-      var re = /^[a-zA-ZäöüßÄÖÜs-']+$/;
+      var re = /^[a-zA-ZäöüßÄÖÜ\s-']+$/;
       return name.length >= 2 && re.test(name);
     }
 
@@ -847,139 +847,3 @@
   }
 
 })();
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.alert {
-  padding: 1rem 1.5rem;
-  border-radius: var(--border-radius-md);
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.alert-success {
-  background-color: #d1fae5;
-  border-color: #6ee7b7;
-  color: #065f46;
-}
-
-.alert-danger {
-  background-color: #fee2e2;
-  border-color: #fca5a5;
-  color: #991b1b;
-}
-
-.alert-warning {
-  background-color: #fef3c7;
-  border-color: #fcd34d;
-  color: #92400e;
-}
-
-.alert-info {
-  background-color: #dbeafe;
-  border-color: #93c5fd;
-  color: #1e40af;
-}
-
-.btn-close {
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 0.2s;
-  padding: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-close:hover {
-  opacity: 1;
-}
-
-.btn-close::before {
-  content: '×';
-  font-weight: bold;
-}
-
-.spinner-border {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: spinner-border 0.75s linear infinite;
-}
-
-.spinner-border-sm {
-  width: 0.875rem;
-  height: 0.875rem;
-  border-width: 0.15em;
-}
-
-@keyframes spinner-border {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.fade {
-  transition: opacity 0.15s linear;
-}
-
-.fade:not(.show) {
-  opacity: 0;
-}
-
-.show {
-  opacity: 1;
-}
